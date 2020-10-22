@@ -10,6 +10,7 @@ namespace ScrollApp2.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : MasterDetailPage
     {
+        int idOfNewPage;
         Dictionary<int, NavigationPage> MenuPages = new Dictionary<int, NavigationPage>();
         public MainPage()
         {
@@ -26,6 +27,12 @@ namespace ScrollApp2.Views
             {
                 switch (id)
                 {
+                    case (int)MenuItemType.Products:
+                        MenuPages.Add(id, new NavigationPage(new ProductPage()));
+                        break;
+                    case (int)MenuItemType.ShoppingCart:
+                        MenuPages.Add(id, new NavigationPage(new ShoppingCartPage()));
+                        break;
                     case (int)MenuItemType.Browse:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
@@ -33,11 +40,15 @@ namespace ScrollApp2.Views
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
                 }
+
+                idOfNewPage = id;
             }
+
+            idOfNewPage = id;
 
             var newPage = MenuPages[id];
 
-            if (newPage != null && Detail != newPage)
+            if (newPage != null)// && Detail != newPage)
             {
                 Detail = newPage;
 
@@ -45,6 +56,8 @@ namespace ScrollApp2.Views
                     await Task.Delay(100);
 
                 IsPresented = false;
+
+                //  ListViewMenu.SelectedItem = 0;
             }
         }
     }

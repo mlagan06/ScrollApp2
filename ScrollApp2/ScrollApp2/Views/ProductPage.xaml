@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScrollApp2.Views.ProductPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="shoppingCartImg" Icon="xamarin_logo.png" Priority="0" Order="Primary" Activated="ShoppingCartClicked"/>
+        <ToolbarItem x:Name="NoItemsInShoppingCart" Priority="0" Order="Primary" Activated="ShoppingCartClicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+         
+            <ListView  x:Name="producttablelist" IsVisible="True" VerticalOptions="FillAndExpand" HasUnevenRows="True" ItemsSource="{Binding WineList}" HeightRequest="1500">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout HeightRequest="120" BackgroundColor="Green" HorizontalOptions="StartAndExpand">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding ProductName}" TextColor="Black" VerticalOptions="Start"></Label>
+
+                                    <!--<Picker Grid.Column="1" Grid.Row="0" SelectedIndexChanged="QuantityChanged"  SelectedIndex="{Binding Quantity,Mode=TwoWay}">-->
+                                    <Picker Grid.Column="4" Grid.Row="2" VerticalOptions="Start" SelectedIndexChanged="OnPickerSelectedIndexChanged"  SelectedIndex="{Binding Quantity, Mode=TwoWay}">
+                                        <Picker.Items>
+                                            <x:String>0</x:String>
+                                            <x:String>1</x:String>
+                                            <x:String>2</x:String>
+                                            <x:String>3</x:String>
+                                            <x:String>4</x:String>
+                                            <x:String>5</x:String>
+                                            <x:String>6</x:String>
+                                        </Picker.Items>
+                                    </Picker>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            
+        </StackLayout>
+       
+    </ContentPage.Content>
+</ContentPage>
+
