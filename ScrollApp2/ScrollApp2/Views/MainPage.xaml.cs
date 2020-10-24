@@ -39,6 +39,9 @@ namespace ScrollApp2.Views
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
+                    case (int)MenuItemType.BarcodeReader:
+                        MenuPages.Add(id, new NavigationPage(new BarcodeReaderPage()));
+                        break;
                 }
 
                 idOfNewPage = id;

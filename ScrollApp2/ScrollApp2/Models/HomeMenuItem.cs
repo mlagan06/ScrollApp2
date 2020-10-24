@@ -9,7 +9,8 @@ namespace ScrollApp2.Models
         Products,
         ShoppingCart,
         Browse,
-        About
+        About,
+        BarcodeReader
     }
     public class HomeMenuItem
     {

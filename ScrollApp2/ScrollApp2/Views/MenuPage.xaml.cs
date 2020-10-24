@@ -21,7 +21,8 @@ namespace ScrollApp2.Views
                 new HomeMenuItem {Id = MenuItemType.Products, Title="Products", Icon =  "back_nav.png", Name = "test" },
                 new HomeMenuItem {Id = MenuItemType.ShoppingCart, Title="Shopping Cart", Icon =  "back_nav.png"},
                 new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse", Icon =  "back_nav.png"},
-                new HomeMenuItem {Id = MenuItemType.About, Title="About", Icon =  "back_nav.png"}
+                new HomeMenuItem {Id = MenuItemType.About, Title="About", Icon =  "back_nav.png"},
+                new HomeMenuItem {Id = MenuItemType.BarcodeReader, Title="Barcode Reader", Icon =  "back_nav.png"},
             };
 
             ListViewMenu.ItemsSource = menuItems;

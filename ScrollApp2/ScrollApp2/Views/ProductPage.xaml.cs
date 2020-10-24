@@ -41,16 +41,16 @@ namespace ScrollApp2.Views
         void OnPickerSelectedIndexChanged(object sender, EventArgs e)
         {
             var picker = (Picker)sender;
-            //var item = (ProductModel)picker.BindingContext;
-            //DrinksToPurchaseList.Add(item);
-             
-            //Dummy Data used to test
-            var _productId = 1;
-            var _quantity = "4";
-            var _productName = "WINE 110011";
-            ProductModel item = new ProductModel() { ProductId = _productId, ProductName = _productName, Quantity = _quantity };
-
+            var item = (ProductModel)picker.BindingContext;
             DrinksToPurchaseList.Add(item);
+
+            //Dummy Data used to test
+            //var _productId = 1;
+            //var _quantity = "4";
+            //var _productName = "WINE 110011";
+            //ProductModel item = new ProductModel() { ProductId = _productId, ProductName = _productName, Quantity = _quantity };
+
+            //DrinksToPurchaseList.Add(item);
 
         }
     }
