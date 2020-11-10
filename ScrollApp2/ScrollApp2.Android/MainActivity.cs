@@ -19,7 +19,18 @@ namespace ScrollApp2.Droid
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            //Barcode reader package
+            ZXing.Net.Mobile.Forms.Android.Platform.Init();
+
             LoadApplication(new App());
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum]
+        Android.Content.PM.Permission[] grantResults)
+        {
+            global::ZXing.Net.Mobile.Forms.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
         }
     }
 }

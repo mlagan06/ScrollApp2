@@ -2,14 +2,33 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace ScrollApp2.ViewModels
 {
-    public class ShoppingCartViewModel
+    public class ShoppingCartViewModel : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         //  public ObservableCollection<ProductModel> FoodList { get; set; }
-        public ObservableCollection<ProductModel> ShoppingCartList { get; set; }
+        // public ObservableCollection<ProductModel> ShoppingCartList { get; set; }
+
+        private ObservableCollection<ProductModel> _shoppingCartList;
+        public ObservableCollection<ProductModel> ShoppingCartList
+        {
+            get
+            {
+                return _shoppingCartList;
+            }
+            set
+            {
+                if (_shoppingCartList == value) return;
+                _shoppingCartList = value;
+                NotifyPropertyChanged();
+            }
+        }
 
         public ShoppingCartViewModel()
         {
@@ -23,6 +42,11 @@ namespace ScrollApp2.ViewModels
             ShoppingCartList = new ObservableCollection<ProductModel>();
 
             //   CitiesList = GetCities().OrderBy(t => t.Value).ToList();
+        }
+
+        private void NotifyPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

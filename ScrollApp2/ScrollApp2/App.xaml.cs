@@ -15,6 +15,7 @@ namespace ScrollApp2
         public static string NewPageToLoad { get; set; }
         public static ObservableCollection<ProductModel> globalShoppingCartOC { get; set; }
         public static Dictionary<int, int> GlobalWinePickerUniquieIdDict = new Dictionary<int, int>();
+        public static int QuantityPreviouslyDeleted { get; set; }
 
 
         public App()

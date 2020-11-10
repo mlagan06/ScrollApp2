@@ -16,5 +16,21 @@ namespace ScrollApp2.Views
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void ZXingScannerView_OnScanResult(ZXing.Result result)
+        {
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                scanResultText.Text = result.Text + " (type: " + result.BarcodeFormat.ToString() + ")";
+
+                BarcodeCaptured.IsVisible = true;
+            });
+        }
+
+        private void SaveNewProduct(object sender, EventArgs e)
+        {
+            ProductSaved.IsVisible = true;
+        }
+
+    }
 }

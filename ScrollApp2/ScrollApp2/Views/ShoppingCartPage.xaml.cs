@@ -28,7 +28,7 @@ namespace ScrollApp2.Views
                 // ProductModel P = new ProductModel();
                 //P.Add(new ProductModel { ProductId = 5, ProductName = "Gin", Image = "Gin.jpg", Description = "700ml", Price = 13.99M, Quantity = 0, SubTotalForItem = 0.00M, Genre = "Wine" });
 
-                App.globalShoppingCartOC.Add(new ProductModel { ProductId = 5, ProductName = "Gin", Quantity="3" });
+                //App.globalShoppingCartOC.Add(new ProductModel { ProductId = 5, ProductName = "Gin", Quantity="3" });
 
                 foreach (ProductModel Model in App.globalShoppingCartOC)
                 {

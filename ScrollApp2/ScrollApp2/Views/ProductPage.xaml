@@ -9,7 +9,7 @@
 
     <ContentPage.Content>
         <StackLayout>
-         
+
             <ListView  x:Name="producttablelist" IsVisible="True" VerticalOptions="FillAndExpand" HasUnevenRows="True" ItemsSource="{Binding WineList}" HeightRequest="1500">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -26,8 +26,8 @@
                                 </Grid.ColumnDefinitions>
                                 <Label Grid.Row="0" Grid.Column="0" Text="{Binding ProductName}" TextColor="Black" VerticalOptions="Start"></Label>
 
-                                    <!--<Picker Grid.Column="1" Grid.Row="0" SelectedIndexChanged="QuantityChanged"  SelectedIndex="{Binding Quantity,Mode=TwoWay}">-->
-                                    <Picker Grid.Column="4" Grid.Row="2" VerticalOptions="Start" SelectedIndexChanged="OnPickerSelectedIndexChanged"  SelectedIndex="{Binding Quantity, Mode=TwoWay}">
+                                   <!--<Picker Grid.Column="1" Grid.Row="0" SelectedIndexChanged="QuantityChanged"  SelectedIndex="{Binding Quantity,Mode=TwoWay}">  SelectedIndexChanged="OnPickerSelectedIndexChanged" -->
+                                    <Picker Grid.Column="4" Grid.Row="2" VerticalOptions="Start" SelectedIndexChanged="QuantityChanged" SelectedIndex="{Binding Quantity, Mode=TwoWay}">
                                         <Picker.Items>
                                             <x:String>0</x:String>
                                             <x:String>1</x:String>
@@ -45,7 +45,14 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-            
+
+
+                <!--<Label Text="Product Name: " HorizontalOptions="Start" TextColor="Black" FontSize="Medium" />
+                <Editor Text="{Binding ProductName}" HorizontalOptions="CenterAndExpand" TextColor="Black" />
+                <Label Text="Quantity: " HorizontalOptions="Start" TextColor="Black" FontSize="Medium" />
+                <Editor Text="{Binding Quantity}" HorizontalOptions="CenterAndExpand" TextColor="Black" />-->
+
+
         </StackLayout>
        
     </ContentPage.Content>
