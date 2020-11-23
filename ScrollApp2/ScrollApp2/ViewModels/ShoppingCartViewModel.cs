@@ -8,9 +8,9 @@ using System.Text;
 
 namespace ScrollApp2.ViewModels
 {
-    public class ShoppingCartViewModel : INotifyPropertyChanged
+    public class ShoppingCartViewModel //: INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        // event PropertyChangedEventHandler PropertyChanged;
 
         //  public ObservableCollection<ProductModel> FoodList { get; set; }
         // public ObservableCollection<ProductModel> ShoppingCartList { get; set; }
@@ -26,7 +26,7 @@ namespace ScrollApp2.ViewModels
             {
                 if (_shoppingCartList == value) return;
                 _shoppingCartList = value;
-                NotifyPropertyChanged();
+               // NotifyPropertyChanged();
             }
         }
 
@@ -44,9 +44,9 @@ namespace ScrollApp2.ViewModels
             //   CitiesList = GetCities().OrderBy(t => t.Value).ToList();
         }
 
-        private void NotifyPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        //private void NotifyPropertyChanged([CallerMemberName] string propertyName = null)
+        //{
+        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        //}
     }
 }

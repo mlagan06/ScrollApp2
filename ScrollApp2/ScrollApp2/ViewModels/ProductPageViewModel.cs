@@ -14,34 +14,24 @@ namespace ScrollApp2.ViewModels
 {
     public class ProductPageViewModel : BindableObject, INotifyPropertyChanged
     {
-        // public ObservableCollection<ProductModel> WineList { get; set; }
-        //public ObservableCollection<ProductModel> WineList { get; set; }
+        public ObservableCollection<ProductModel> WineList { get; set; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        private ObservableCollection<ProductModel> _wineList;
-        public ObservableCollection<ProductModel> WineList
-        {
-            get
-            {
-                return _wineList;
-            }
-            set
-            {
-                if (_wineList == value) return;
-                _wineList = value;
-                OnPropertyChanged();
-            }
-        }
-
-      
 
         // private ProductModel _productModel;
 
         public ProductPageViewModel()
         {
+
+            //if (App.globalShoppingCartOC.Count > 0)
+            //{
+            //    _wineList = App.globalShoppingCartOC;
+            //    WineList = App.globalShoppingCartOC;
+            //    return;
+            //}
+
             //Subscription
-           // this.PropertyChanged += OnPropertyChanged;
+            //  this.PropertyChanged += OnPropertyChanged;
 
             //WineList = new ObservableCollection<ProductModel>();
             //WineList.Add(new ProductModel
@@ -59,20 +49,20 @@ namespace ScrollApp2.ViewModels
             WineList.Add(new ProductModel
             {
                 ProductId = 1,
-                ProductName = "Wine 101"//,
-               // Quantity = "0",
+                ProductName = "Wine 101",//,
+                Quantity = "0"
             });
             WineList.Add(new ProductModel
             {
                 ProductId = 2,
-                ProductName = "Wine 102"//,
-                //Quantity = "0",
+                ProductName = "Wine 102",//,
+                Quantity = "0"
             });
             WineList.Add(new ProductModel
             {
                 ProductId = 3,
-                ProductName = "Wine 103"//,
-               // Quantity = "0",
+                ProductName = "Wine 103",//,
+                Quantity = "0"
             });
 
             //   CitiesList = GetCities().OrderBy(t => t.Value).ToList();
@@ -200,6 +190,6 @@ namespace ScrollApp2.ViewModels
         //}
 
         //  public async Task RemoveItem(string productName, int productId, int quantityToRemove)
-        
+
     }
 }

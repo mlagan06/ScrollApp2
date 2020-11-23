@@ -27,7 +27,7 @@
                                 <Label Grid.Row="0" Grid.Column="0" Text="{Binding ProductName}" TextColor="Black" VerticalOptions="Start"></Label>
 
                                    <!--<Picker Grid.Column="1" Grid.Row="0" SelectedIndexChanged="QuantityChanged"  SelectedIndex="{Binding Quantity,Mode=TwoWay}">  SelectedIndexChanged="OnPickerSelectedIndexChanged" -->
-                                    <Picker Grid.Column="4" Grid.Row="2" VerticalOptions="Start" SelectedIndexChanged="QuantityChanged" SelectedIndex="{Binding Quantity, Mode=TwoWay}">
+                                    <Picker Grid.Column="4" Grid.Row="2" VerticalOptions="Start"  SelectedIndex="{Binding Quantity, Mode=TwoWay}">
                                         <Picker.Items>
                                             <x:String>0</x:String>
                                             <x:String>1</x:String>

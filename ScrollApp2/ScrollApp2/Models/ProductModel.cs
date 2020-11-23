@@ -34,8 +34,6 @@ namespace ScrollApp2.Models
         {
             //Subscription
             this.PropertyChanged += OnPropertyChanged;
-           // _ProductId = ProductId;
-
         }
 
         [PrimaryKey, AutoIncrement]
@@ -49,26 +47,39 @@ namespace ScrollApp2.Models
                 OnPropertyChanged();
             }
         }
+        ////Properties
+        //public string Quantity
+        //{
+        //    get
+        //    {
+        //        App.QuantityPreviouslyDeleted = Convert.ToInt32(_Quantity);
+        //        // tempQuantity = _Quantity;
+        //        //  return _Quantity;
+
+        //        if (_Quantity == null) return "";
+        //        else return _Quantity;
+        //    }
+        //    set
+        //    {
+        //        if (_Quantity == "0")
+        //        {
+
+
+        //            //RemoveItem();
+        //        }
+        //        _Quantity = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
 
         //Properties
         public string Quantity
         {
             get {
-                App.QuantityPreviouslyDeleted = Convert.ToInt32(_Quantity);
-               // tempQuantity = _Quantity;
-               // return _Quantity;
-
-                if (_Quantity == null) return "";
-                else return _Quantity;
+                return _Quantity;
             }
             set
             {
-                if (_Quantity == "0")
-                {
-                    
-
-                    //RemoveItem();
-                }
                 _Quantity = value;
                 OnPropertyChanged();
             }
@@ -114,15 +125,7 @@ namespace ScrollApp2.Models
         {
             if (e.PropertyName == nameof(Quantity))
             {
-                //Do anything that needs doing when the Quantity changes here...
-                //var time = "hello
-
-                if (Convert.ToInt32(_Quantity) == 0)
-                {
-                   // RemoveItem("jimmy");
-
-
-                }
+                //test quantity amount
             }
         }
 
